@@ -64,6 +64,20 @@ def get_roots(a, b, c):
             result.append('Нет корней')
             result.append(x3)
             result.append(x4)
+        elif root1 ==0 and root2 > 0:
+            x1=math.sqrt(root1)
+            x2=math.sqrt(root2)
+            x3=-1 *math.sqrt(root2)
+            result.append(x1)
+            result.append(x2)
+            result.append(x3)   
+        elif root1 >0 and root2 == 0:
+            x1=math.sqrt(root1)
+            x2=-1 *math.sqrt(root1)
+            x3=math.sqrt(root2)
+            result.append(x1)
+            result.append(x2)
+            result.append(x3)    
         else:
             result.append('Нет корней')
             result.append('Нет корней')
@@ -114,10 +128,14 @@ def main():
         print('x = 0')
     elif len_roots == 2:
         print('Один корень : x1 = {}; x2 = {}'.format(roots[0],roots[1]))
+    elif len_roots == 3:
+        print('Два корня : x1 = {}; x2 = {}; x3 = {}'.format(roots[0],roots[1],roots[2]))
     elif len_roots == 4:
         print('Два корня : x1 = {}; x2 = {}; x3 = {}; x4 = {}'.format(roots[0], roots[1], roots[2], roots[3]))
     elif len_roots == 5:
         print('Любое число - x')
+
+        
 # Если сценарий запущен из командной строки
 if __name__ == "__main__":
     main()
